@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>라온도 관광 안내소 | 바다 끝의 작은 섬</title>
+<style>
+:root{--navy:#123c4a;--teal:#2b7776;--mint:#dceee8;--sand:#f5f0e5;--ink:#21383c;--muted:#647779;--white:#fffdf8;--accent:#d47f55}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--white);color:var(--ink);font-family:system-ui,-apple-system,"Noto Sans KR",sans-serif;line-height:1.65}
+a{color:inherit;text-decoration:none}.notice{background:#173f49;color:#e8f4ef;text-align:center;padding:8px 16px;font-size:12px;letter-spacing:.04em}
+header{position:sticky;top:0;z-index:10;background:rgba(255,253,248,.94);backdrop-filter:blur(10px);border-bottom:1px solid #e7e5dc}
+.nav{max-width:1120px;margin:auto;padding:15px 22px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-weight:850;letter-spacing:-.04em;color:var(--navy);font-size:19px}.brand span{display:block;font-size:10px;letter-spacing:.18em;color:var(--teal);font-weight:700}
+nav{display:flex;gap:20px;font-size:13px;color:#425c60}nav a:hover{color:var(--accent)}.menuBtn{display:none;background:none;border:1px solid #cbd9d4;border-radius:8px;padding:7px 10px;color:var(--navy)}
+.hero{background:linear-gradient(120deg,rgba(13,54,65,.86),rgba(25,87,91,.58)),radial-gradient(ellipse at 70% 25%,#9dc8b8 0%,transparent 30%),linear-gradient(160deg,#9fc9c0 0%,#4e8c91 46%,#234f63 47%,#173c4c 100%);color:white;min-height:490px;display:flex;align-items:center;overflow:hidden;position:relative}
+.hero:after{content:"";position:absolute;right:-5%;bottom:-100px;width:65%;height:270px;background:rgba(232,242,223,.12);border-radius:50%;transform:rotate(-10deg)}
+.heroInner{max-width:1120px;margin:auto;padding:80px 22px;width:100%;position:relative;z-index:1}
+.eyebrow{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#cde7d9;font-weight:750}.hero h1{font-size:clamp(42px,7vw,76px);line-height:1.12;letter-spacing:-.06em;margin:17px 0 20px;max-width:650px}.hero p{max-width:500px;color:#e5f1ed;font-size:16px}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:12px 19px;font-weight:750;font-size:13px;border:1px solid transparent;cursor:pointer}.btn.primary{background:#f3e6c9;color:#26494d}.btn.ghost{border-color:#d6e7df;color:white;background:#ffffff12}.heroStamp{position:absolute;right:10%;top:20%;width:155px;height:155px;border:1px solid #ffffff70;border-radius:50%;display:grid;place-items:center;text-align:center;color:#f4f0db;transform:rotate(10deg);font-size:12px;letter-spacing:.12em;line-height:1.6}.heroStamp b{font-size:25px;display:block}
+main{max-width:1120px;margin:auto;padding:0 22px}.intro{display:grid;grid-template-columns:1.1fr .9fr;gap:55px;padding:75px 0 55px;align-items:center}.sectionTag{font-size:11px;letter-spacing:.18em;color:var(--teal);font-weight:800}.intro h2,.sectionHead h2{font-size:clamp(27px,4vw,40px);line-height:1.25;letter-spacing:-.04em;color:var(--navy);margin:10px 0 16px}.intro p{color:var(--muted);margin:0}.quote{background:var(--sand);border-radius:18px;padding:28px 30px;position:relative}.quote:before{content:"“";font-family:Georgia,serif;font-size:65px;line-height:.7;color:var(--accent);display:block}.quote p{font-size:18px;color:var(--navy);font-weight:700;margin:8px 0 12px}.quote small{color:var(--muted)}
+section.content{padding:50px 0}.sectionHead{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:25px}.sectionHead p{color:var(--muted);max-width:390px;font-size:13px;margin:0}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.card{border:1px solid #e4e7df;border-radius:16px;overflow:hidden;background:white;transition:transform .2s,box-shadow .2s}.card:hover{transform:translateY(-4px);box-shadow:0 12px 28px #193c3c12}.visual{height:155px;display:grid;place-items:center;font-size:52px;position:relative;overflow:hidden}.visual:after{content:"";position:absolute;width:180px;height:70px;border-radius:50%;border:1px solid #ffffff75;transform:rotate(-20deg)}.v1{background:linear-gradient(145deg,#a5cdbb,#4f8984)}.v2{background:linear-gradient(145deg,#f0d7a9,#d58f6e)}.v3{background:linear-gradient(145deg,#c0d8d4,#658b9c)}.cardBody{padding:20px}.cardBody .meta{font-size:10px;letter-spacing:.13em;color:var(--teal);font-weight:800}.card h3{margin:6px 0 7px;color:var(--navy);font-size:19px}.card p{font-size:13px;color:var(--muted);margin:0 0 15px}.textLink{font-size:12px;font-weight:800;color:var(--teal);cursor:pointer;border:0;background:none;padding:0}
+.history{background:var(--sand);border-radius:20px;padding:30px 32px}.timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:24px}.timeItem{border-top:2px solid #b4c9bd;padding-top:15px}.year{font-size:12px;color:var(--accent);font-weight:850;letter-spacing:.1em}.timeItem h3{font-size:17px;color:var(--navy);margin:6px 0}.timeItem p{font-size:13px;color:var(--muted);margin:0}
+.mapWrap{display:grid;grid-template-columns:1fr .8fr;gap:25px;align-items:center}.map{min-height:290px;border-radius:18px;background:#d9ebe3;position:relative;overflow:hidden;display:grid;place-items:center}.map svg{width:100%;height:100%;position:absolute;inset:0}.mapLabel{position:absolute;background:#fffdf8e8;border:1px solid #d7e4db;padding:8px 11px;border-radius:8px;font-size:11px;font-weight:800;color:var(--navy);box-shadow:0 3px 10px #123c4a12}.mapLabel.one{top:18%;left:12%}.mapLabel.two{top:56%;right:9%}.mapLabel.three{bottom:13%;left:18%}.mapInfo h3{font-size:22px;color:var(--navy);margin:0 0 8px}.mapInfo p{font-size:13px;color:var(--muted)}.detailList{list-style:none;padding:0;margin:18px 0}.detailList li{border-bottom:1px solid #e3e7df;padding:10px 0;font-size:13px;display:flex;justify-content:space-between;gap:15px}.detailList span{color:var(--muted)}
+.visitorGrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.visitor{padding:22px;border:1px solid #e4e7df;border-radius:15px}.stars{color:#c47c4d;letter-spacing:.15em;font-size:13px}.visitor p{font-size:14px;color:#40575a}.visitor small{color:var(--muted)}
+.cta{margin:65px 0;background:var(--navy);color:white;padding:35px;border-radius:20px;display:flex;align-items:center;justify-content:space-between;gap:25px}.cta h2{font-size:27px;margin:0 0 5px;letter-spacing:-.04em}.cta p{color:#c5d9d4;font-size:13px;margin:0}.cta .btn{background:#f3e6c9;color:#26494d;white-space:nowrap}
+footer{background:#102f38;color:#c8d9d4;padding:28px 22px;text-align:center;font-size:11px}footer strong{color:white;display:block;font-size:14px;margin-bottom:4px}
+.modal{display:none;position:fixed;inset:0;background:#102f38a8;z-index:30;align-items:center;justify-content:center;padding:20px}.modal.open{display:flex}.modalBox{max-width:520px;width:100%;background:var(--white);border-radius:18px;padding:28px;position:relative}.modalBox h2{margin:0 0 10px;color:var(--navy)}.modalBox p{color:var(--muted);font-size:14px}.close{position:absolute;right:15px;top:12px;border:0;background:#e9f0e9;border-radius:50%;width:32px;height:32px;font-size:18px;cursor:pointer}
+@media(max-width:760px){nav{display:none;position:absolute;top:60px;left:0;right:0;background:var(--white);padding:20px;flex-direction:column;border-bottom:1px solid #e7e5dc}nav.open{display:flex}.menuBtn{display:block}.hero{min-height:450px}.heroStamp{right:5%;top:7%;width:95px;height:95px;font-size:9px}.heroStamp b{font-size:18px}.heroInner{padding-top:100px}.intro,.mapWrap{grid-template-columns:1fr;gap:25px}.cards{grid-template-columns:1fr}.visual{height:130px}.timeline{grid-template-columns:1fr;gap:16px}.sectionHead{display:block}.sectionHead p{margin-top:10px}.visitorGrid{grid-template-columns:1fr}.cta{display:block;padding:28px}.cta .btn{margin-top:20px}}
+</style>
+</head>
+<body>
+<div class="notice">창작 프로젝트 · 실제 장소 및 관광 정보가 아닌 가상 세계관입니다</div>
+<header><div class="nav">
+<a class="brand" href="#top">라온도 <span>RAONDO ISLAND OFFICE</span></a>
+<button class="menuBtn" id="menuBtn" aria-label="메뉴 열기">메뉴 ☰</button>
+<nav id="nav"><a href="#about">섬 소개</a><a href="#places">추천 명소</a><a href="#history">섬의 기록</a><a href="#map">오시는 길</a><a href="#voices">여행 노트</a></nav>
+</div></header>
+<div class="hero" id="top"><div class="heroInner">
+<div class="eyebrow">A QUIET ISLAND BEYOND THE BLUE</div>
+<h1>바다가 잠잠해지는 곳,<br>라온도</h1>
+<p>지도 끝의 작은 섬에서 천천히 걷고, 오래 바라보고, 나만의 계절을 발견해 보세요.</p>
+<div class="actions"><a class="btn primary" href="#places">섬 둘러보기 ↗</a><a class="btn ghost" href="#about">라온도 알아보기</a></div>
+</div><div class="heroStamp">ISLAND GUIDE<b>RAONDO</b>EST. 19—</div></div>
+<main>
+<section class="intro" id="about">
+<div><div class="sectionTag">WELCOME TO RAONDO</div><h2>서두르지 않아도<br>괜찮은 섬</h2><p>라온도는 동쪽의 낮은 언덕과 서쪽의 유리처럼 잔잔한 만으로 알려진 작은 섬입니다. 오래된 등대와 바람을 따라 난 산책길, 해 질 무렵 은빛으로 변하는 모래사장이 이곳의 풍경을 만듭니다. 이곳에서는 특별한 일을 하지 않는 하루도 여행이 됩니다.</p></div>
+<div class="quote"><p>“섬에 도착하면 가장 먼저 시계를 잠시 넣어 두세요. 라온도의 하루는 조금 느리게 흘러가니까요.”</p><small>— 라온도 여행 안내서, 첫 페이지</small></div>
+</section>
+<section class="content" id="places"><div class="sectionHead"><div><div class="sectionTag">PLACES TO REMEMBER</div><h2>라온도에서 만나는 풍경</h2></div><p>섬의 서로 다른 표정을 보여 주는 세 곳. 각 장소의 이야기를 눌러 더 알아보세요.</p></div>
+<div class="cards">
+<article class="card"><div class="visual v1">🏡</div><div class="cardBody"><div class="meta">01 · OLD VILLAGE</div><h3>느린마을 골목</h3><p>낮은 돌담과 청록색 문이 이어지는 오래된 마을. 해가 기울면 골목마다 따뜻한 불빛이 켜집니다.</p><button class="textLink" data-modal="village">장소 이야기 읽기 ↗</button></div></article>
+<article class="card"><div class="visual v2">🗼</div><div class="cardBody"><div class="meta">02 · LIGHTHOUSE</div><h3>바람끝 등대</h3><p>섬의 북쪽 절벽 위에 세워진 등대. 맑은 날에는 바다의 색이 세 번 바뀌는 모습을 볼 수 있다고 합니다.</p><button class="textLink" data-modal="lighthouse">장소 이야기 읽기 ↗</button></div></article>
+<article class="card"><div class="visual v3">🌊</div><div class="cardBody"><div class="meta">03 · SILVER BEACH</div><h3>은결 해변</h3><p>잘게 부서진 조개껍질이 햇빛을 받아 은빛으로 반짝이는 해변. 일몰 직전이 가장 아름답습니다.</p><button class="textLink" data-modal="beach">장소 이야기 읽기 ↗</button></div></article>
+</div></section>
+<section class="content" id="history"><div class="history"><div class="sectionTag">FRAGMENTS OF HISTORY</div><h2 style="color:var(--navy);margin:10px 0 0;font-size:32px;letter-spacing:-.04em">섬에 남겨진 기록</h2><p style="color:var(--muted);font-size:13px;max-width:650px">라온도에 전해지는 이야기들은 오래된 항해 일지와 마을 사람들의 구전에서 시작됩니다. 기록마다 조금씩 다른 부분도 있지만, 섬사람들은 그 차이까지 섬의 역사로 여깁니다.</p>
+<div class="timeline">
+<div class="timeItem"><div class="year">1891 · 발견의 해</div><h3>안개 속의 불빛</h3><p>항해사 윤해온의 일지에 ‘안개 사이로 세 번 깜빡이는 불빛’이 기록됩니다. 이것이 라온도를 가리킨 첫 기록이라고 전해집니다.</p></div>
+<div class="timeItem"><div class="year">1924 · 마을의 시작</div><h3>바람을 피해 머문 사람들</h3><p>폭풍을 피하던 어부 몇 가족이 서쪽 만에 정착했고, 돌담과 작은 선착장을 만들었다고 합니다.</p></div>
+<div class="timeItem"><div class="year">1978 · 오늘의 등대</div><h3>바람끝 등대 점등</h3><p>기존의 목조 표지를 대신해 지금의 등대가 세워졌습니다. 매년 첫 봄바람이 부는 날 작은 점등 기념식이 열립니다.</p></div>
+</div></div></section>
+<section class="content" id="map"><div class="sectionHead"><div><div class="sectionTag">FIND YOUR WAY</div><h2>섬 안에서 길 찾기</h2></div><p>라온도는 크지 않아서 천천히 걸어도 하루 동안 주요 장소를 둘러볼 수 있습니다.</p></div>
+<div class="mapWrap"><div class="map" aria-label="가상 섬 지도"><svg viewBox="0 0 600 330" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><path d="M0 40 Q100 10 190 40 T380 25 T600 60 L600 330 L0 330Z" fill="#b5d9d0"/><path d="M0 240 Q130 190 230 230 T430 220 T600 235 L600 330 L0 330Z" fill="#a4cec5"/><path d="M170 55 C220 40 290 65 310 110 C350 130 390 175 360 220 C335 260 275 275 235 248 C190 245 160 210 170 175 C140 135 145 90 170 55Z" fill="#e7d9b4" stroke="#fffdf8" stroke-width="4"/><path d="M190 83 C225 73 275 88 290 120 S345 172 325 208 S270 240 240 225 S190 190 198 160 S175 110 190 83Z" fill="#b3c99e"/><path d="M215 110 Q250 130 270 158 T300 210" fill="none" stroke="#fffdf8" stroke-width="5" stroke-linecap="round"/><path d="M180 195 Q230 185 255 205 T330 180" fill="none" stroke="#fffdf8" stroke-width="4" stroke-linecap="round"/></svg><div class="mapLabel one">🗼 바람끝 등대</div><div class="mapLabel two">🌊 은결 해변</div><div class="mapLabel three">🏡 느린마을</div></div>
+<div class="mapInfo"><h3>천천히 걸어서 만나는 섬</h3><p>가상의 안내 지도입니다. 실제 항로·교통편을 제공하지 않습니다.</p><ul class="detailList"><li>섬 둘레 산책길 <span>약 4.2km</span></li><li>느린마을 → 등대 <span>도보 약 35분</span></li><li>느린마을 → 은결 해변 <span>도보 약 20분</span></li><li>추천 방문 시간 <span>늦은 오후</span></li></ul></div></div>
+</section>
+<section class="content" id="voices"><div class="sectionHead"><div><div class="sectionTag">TRAVEL NOTES</div><h2>여행 노트</h2></div><p>라온도를 다녀간 사람들이 남겼다고 전해지는 짧은 기록입니다.</p></div>
+<div class="visitorGrid"><article class="visitor"><div class="stars">★★★★★</div><p>“해 질 무렵 은결 해변에 앉아 있었어요. 특별한 일이 없었는데도 오래 기억에 남을 것 같은 하루였습니다.”</p><small>— 여행 노트 014 · 가상 기록</small></article><article class="visitor"><div class="stars">★★★★☆</div><p>“등대까지 가는 길은 조금 가팔랐지만, 바람이 불 때마다 바다가 다른 색으로 보였어요. 다음에는 봄에 다시 오고 싶습니다.”</p><small>— 여행 노트 027 · 가상 기록</small></article></div>
+</section>
+<div class="cta"><div><h2>당신만의 라온도를 상상해 보세요.</h2><p>아무것도 하지 않아도 괜찮은 하루가 이 섬의 가장 큰 기념품입니다.</p></div><a class="btn" href="#top">처음으로 돌아가기 ↑</a></div>
+</main>
+<footer><strong>라온도 관광 안내소</strong>RAONDO ISLAND OFFICE · Fictional destination created for a school project<br>이 웹사이트의 장소·연혁·여행 노트는 모두 창작된 설정입니다.</footer>
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modalBox"><button class="close" id="closeModal" aria-label="닫기">×</button><div class="sectionTag">RAONDO FIELD NOTE</div><h2 id="modalTitle">장소 이야기</h2><div id="modalText"></div></div></div>
+<script>
+const stories={
+village:{title:"느린마을 골목",text:"마을의 집들은 바다에서 불어오는 바람을 막기 위해 낮은 돌담으로 이어져 있습니다. 가장 오래된 우물 옆에는 매년 봄 작은 종이등을 다는 풍습이 남아 있습니다. 방문객들은 골목을 걸을 때 주민들의 생활 공간을 존중해 달라는 안내를 받습니다."},
+lighthouse:{title:"바람끝 등대",text:"북쪽 절벽의 등대는 라온도의 상징입니다. 마을 기록에 따르면 등대 불빛은 폭풍이 오기 전 바다의 흐름을 확인하는 기준점이었습니다. 등대 내부는 안전 문제로 공개되지 않지만, 주변 전망길은 해 질 무렵 특히 인기가 높다고 전해집니다."},
+beach:{title:"은결 해변",text:"은결 해변이라는 이름은 모래 사이의 작은 조개 조각이 달빛 아래 은색 실처럼 보인다는 데서 왔다고 합니다. 해변의 모양은 계절마다 조금씩 달라지며, 마을 사람들은 해변에 남은 조개껍질을 가져가기보다 그대로 두는 것을 권합니다."}
+};
+const modal=document.getElementById('modal');
+document.querySelectorAll('[data-modal]').forEach(btn=>btn.addEventListener('click',()=>{const s=stories[btn.dataset.modal];document.getElementById('modalTitle').textContent=s.title;document.getElementById('modalText').textContent=s.text;modal.classList.add('open')}));
+function closeModal(){modal.classList.remove('open')}
+document.getElementById('closeModal').addEventListener('click',closeModal);
+modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+document.getElementById('menuBtn').addEventListener('click',()=>document.getElementById('nav').classList.toggle('open'));
+document.querySelectorAll('#nav a').forEach(a=>a.addEventListener('click',()=>document.getElementById('nav').classList.remove('open')));
+</script>
+</body>
+</html>
